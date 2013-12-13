@@ -1,6 +1,6 @@
 var crypto = require('crypto')
 
-// (String, Number) => String
+// (String, Number?) => String
 function sign(sharedKey, offset) {
   offset = offset || 0
   var now = String(Date.now() + offset)
@@ -22,7 +22,8 @@ function verify(sharedKey, signature) {
   // (+/- 60 seconds)
   var now = Date.now()
   if (Math.abs(now - clientNow) > 60000) {
-    throw new Error('clocks not in sync')
+    throw new Error('Clocks not in sync:\n server: ' +
+      now + '\n client: ' + clientNow)
   }
 
   // verify hmac
@@ -40,15 +41,17 @@ module.exports = function middleware(sharedKey) {
     try {
       var requestAuthorized = verify(sharedKey, req.headers.authorization)
       if (requestAuthorized) {
-        next()
+        return next()
+      } else {
+        // request not authorized
+        res.statusCode = 403
+        res.write(String(Date.now()))
+        res.end()
       }
     } catch (e) {
-      next(e)
+      e.code = 403
+      return next(e)
     }
-    // request not authorized
-    res.statusCode = 403
-    res.write(String(Date.now()))
-    res.end()
   }
 }
 
