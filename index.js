@@ -22,8 +22,8 @@ function verify(sharedKey, signature) {
   // (+/- 60 seconds)
   var now = Date.now()
   if (Math.abs(now - clientNow) > 60000) {
-    throw new Error('Clocks not in sync:\n server: ' +
-      now + '\n client: ' + clientNow)
+    console.log('fixedauth:WARN clocks not in sync: server: ' + now + ' client: ' + clientNow);
+    // throw new Error('Clocks not in sync:\n server: ' + now + '\n client: ' + clientNow);
   }
 
   // verify hmac
