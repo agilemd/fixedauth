@@ -2,7 +2,7 @@
   "name": "fixedauth",
   "author": "AgileMD <hello@agilemd.com>",
   "contributors": ["jden <jason@denizac.org>"],
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "peer service authentication with a fixed, shared key",
   "keywords": ["authentication"],
   "main": "index.js",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "chai": "~1.6.0",
-    "mocha": "~1.9.0"
+    "chai": "1.6.0",
+    "mocha": "1.9.0"
   }
 }

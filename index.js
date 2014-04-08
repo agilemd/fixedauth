@@ -12,6 +12,7 @@ function sign(sharedKey, offset) {
 
 // (String, String) => Boolean
 function verify(sharedKey, signature) {
+  signature = signature || ''
 
   var authStr = new Buffer(signature, 'base64').toString()
   var auth = authStr.split(':')
