@@ -1,10 +1,14 @@
 {
   "name": "fixedauth",
   "author": "AgileMD <hello@agilemd.com>",
-  "contributors": ["jden <jason@denizac.org>"],
-  "version": "0.3.0",
+  "contributors": [
+    "jden <jason@denizac.org>"
+  ],
+  "version": "0.3.1",
   "description": "peer service authentication with a fixed, shared key",
-  "keywords": ["authentication"],
+  "keywords": [
+    "authentication"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
