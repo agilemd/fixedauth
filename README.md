@@ -1,4 +1,8 @@
-# fixedauth
+DEPRECATED: fixedauth
+=====================
+
+**DEPRECATED as of November 9, 2015. Will be removed from npm on November 1, 2016**
+
 peer service authentication with a fixed, shared key
 
 ## usage
@@ -58,7 +62,9 @@ From package root:
 ## contributors
 
 - jden <jason@denizac.org>
+- kurttheviking <kurttheviking@outlook.com>
 
 
 ## license
+
 MIT. (c) MMXIII AgileMD http://agilemd.com
